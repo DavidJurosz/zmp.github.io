@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Stránka se bude věnovat projektu ekologie, ekonomie"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="keywords" content="media, modering, promo, video, reportáž"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>MA Mediapress - Kontakt</title>
+</head>
+<body>
+<nav id="navbar">
+    <div id="logo">
+        <a href="index.html"><img src="img/logo_mediapress_bk.svg" alt="logo mediapress" height="45" width="45"></a>
+    </div>
+    <a href="#" id="hamburger-menu"><i class="fa fa-bars fa-2x"></i></a>
+    <div class="navbar-text">
+        <ul>
+            <li><a href="index.html">Úvod</a></li>
+            <li><a href="kdojsme.html">Kdo jsme</a></li>
+            <li><a href="sluzby.html">Služby</a></li>
+            <li><a href="reportaze.html">Reportáže</a></li>
+            <li><a href="kontakt.html" class="current">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+<section id="contact-section">
+    <div class="contact-box">
+        <h2><span class="primary-color" style="padding-right: 8px">Napište</span> nám</h2>
+        <p>Zaujaly Vás naše služby? Vyplňte náš kontaktní formulář a my Vám dáme obratem vědět!!</p>
+        <div class="formular">
+            <form action="#" method="post">
+                <div class="item">
+                    <label for="jmeno">Jméno</label> <br>
+                    <input type="text" id="jmeno" name="jmeno" required>
+                </div>
+                <div class="item">
+                    <label for="prijmeni">Příjmení</label> <br>
+                    <input type="text" id="prijmeni" name="prijmeni" required>
+                </div>
+                <div class="item">
+                    <label for="email">Email</label> <br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="item">
+                    <label for="telefon">Telefon</label> <br>
+                    <input type="tel" id="telefon" name="telefon"  pattern="(\+420)?[0-9]{1,12}" required value="+420">
+                </div>
+                <div class="item">
+                <label for="sluzba">Druh služby</label> <br>
+                <select id="sluzba" name="sluzba" required>
+                    <option value="" disabled selected>Vyberte druh služby</option>
+                    <option value="videotvorba">Videotvorba</option>
+                    <option value="modering">Modering</option>
+                    <option value="reportaz">Reportáž</option>
+                </select>
+                </div>
+                <input type="submit" value="Odeslat" class="button-dark">
+            </form>
+        </div>
+    </div>
+</section>
+<footer id="main-footer">
+    <p>Copyright &copy; 2023, David Jurosz - vytvořeno pro závěrečnou maturitní práci</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('#navbar #hamburger-menu').click(function () {
+        $('#navbar ul').slideToggle('slow')
+    });
+
+    $('#navbar ul li a').click(function () {
+        $('#navbar ul').hide();
+    });
+    // Smooth scrolling
+    $('#navbar a, .btn').on('click', function (event) {
+        if (this.hash !== '') {
+            event.preventDefault();
+            const hash = this.hash;
+            $('html, body').animate(
+                {
+                    scrollTop: $(hash).offset().top - 260
+                }, 800
+            )
+        }
+    })
+
+
+    var nav_sections = $('section');
+    var main_nav = $('#navbar li');
+
+    $(window).on('scroll', function () {
+
+        var cur_pos = $(this).scrollTop() + 200;
+        nav_sections.each(function () {
+            var top = $(this).offset().top,
+                bottom = top + $(this).outerHeight();
+
+            if (cur_pos >= top && cur_pos <= bottom) {
+                if (cur_pos <= bottom) {
+                    main_nav.find('a').removeClass('active');
+                }
+                main_nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+            }
+
+            if (cur_pos < 300) {
+                $("#navbar ul li a").removeClass('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>

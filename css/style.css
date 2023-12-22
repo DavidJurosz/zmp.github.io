@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+:root {
+    --primary-color: #ca0f0f;
+    --secondary-color: rgba(255,255,255,.4);
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.button-dark {
+    padding: 1rem;
+    margin: 1.5rem;
+    background: rgb(0,0,0,0.1);
+    color: #ddd;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: var(--primary-color) solid 3px;
+    border-radius: 2rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button-dark:hover {
+    color: white;
+    background: var(--primary-color);
+
+}
+
+/* navigační menu */
+#navbar {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 2;
+}
+#navbar #hamburger-menu{
+    display: none;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+#navbar a {
+    color: #ddd;
+    margin-left: 1.5vh;
+    font-size: larger;
+}
+
+#navbar ul li a {
+    padding: 0.25rem 1rem;
+    margin: 0.25rem 0.5rem;
+    transition: 0.3s;
+}
+
+#navbar ul li a:hover {
+    background: var(--primary-color);
+    border-radius: 1rem;
+    color: white;
+}
+
+#navbar ul li a.current {
+    background: var(--primary-color);
+    border-radius: 1rem;
+    color: white;
+}
+
+/* uvodní snímek na stránce */
+#showcase {
+    background: #333 url("../img/josh-sorenson-LVmyjS0hxYU-unsplash.jpg") center center/cover;
+    height: 92vh;
+}
+
+#showcase-2 {
+    background: #333 url("../img/josh-sorenson-LVmyjS0hxYU-unsplash.jpg") center center/cover;
+    height: 50vh;
+    border-bottom: var(--primary-color) solid 4px;
+}
+
+.showcase-content {
+    letter-spacing: 0.25rem;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 2rem;
+}
+
+.showcase-heading {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.showcase-heading-smaller {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.slogan {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    text-align: center;
+}
+
+/* zdroj obrázku */
+.zdroj {
+    font-size: small;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: grey;
+    margin: 10px 20px;
+}
+
+.zdroj a {
+    color: grey;
+    text-decoration: none;
+}
+
+/* úvodní strana - kdo jsme*/
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: var(--primary-color) solid 4px;
+    border-bottom: var(--primary-color) solid 4px;
+    background: black;
+    width: 100%;
+}
+
+.pr-heading {
+    color: white;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.pr-heading-dark {
+    color: black;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.about p {
+    color: white;
+    padding: 1rem 4rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* uvodní strana - služby */
+.pr-heading-light {
+    padding-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.sluzby {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* styly boxů na úvodní stránce */
+#boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 12rem;
+    margin: 2rem 0;
+    color: black;
+}
+
+#boxes .box i {
+    color: var(--primary-color);
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: 0.3s;
+}
+
+#boxes .box i:hover {
+    color: white;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* stránka - kdo jsme*/
+#video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#video p {
+    font-size: 2rem;
+}
+
+video {
+    height: 50%;
+    width: 50%;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    background: var(--primary-color);
+    border: #ca0f0f solid 4px;
+    border-radius: 2rem;
+
+}
+
+/* Zápatí */
+#main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    background: black;
+    color: white;
+    font-size: large;
+    border-top: var(--primary-color) solid 4px;
+}
+/*sluzby - obsah*/
+#sluzby-boxy{
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    z-index: 9;
+    margin: 3rem;
+    color: white;
+}
+#sluzby-boxy .s-box{
+    min-height: 280px;
+    width: 380px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 8%;
+    background: black;
+    position: relative;
+}
+#sluzby-boxy .s-box::before{
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: var(--primary-color);
+    transition: 0.6s;
+    transform: rotate(0deg);
+    z-index: -1;
+}
+#sluzby-boxy .s-box:hover.s-box::before{
+    transform: rotate(10deg);
+}
+#sluzby-boxy .s-box i{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.8rem 0;
+}
+#sluzby-boxy .s-box h3{
+    font-size: 1.5rem;
+
+}
+#sluzby-boxy .s-box p{
+    color: #dddddd;
+}
+
+/* Kontakt - stránka */
+#contact-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333 url("../img/theregisti-WwadnJLxjXM-unsplash.jpg") center center/cover;
+    height: 100vh;
+}
+.contact-box{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1rem 1rem
+}
+
+.contact-box h2{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+
+}
+.contact-box .formular{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item{
+    margin: 1.5rem 0;
+}
+label{
+    font-size: large;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select{
+    width: 50vw;
+    height: 2rem;
+    border-radius: 1rem;
+}
+/* Reportáže */
+#reportaze-obsah{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 500px) {
+   /* vytvoření respozivity u navigačního menu */
+    #navbar{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* vytvoření responzivity s hamburger menu */
+    #navbar #hamburger-menu{
+        display: block;
+    }
+    #navbar ul{
+        flex-direction: column;
+        align-items: stretch;
+        display: none;
+    }
+    #navbar ul li{
+        padding: 0.5rem;
+    }
+    #navbar ul li:first-child{
+        margin-top: 0.8rem;
+    }
+    #navbar #logo{
+        margin-bottom: 1.3rem;
+        text-align: center;
+    }
+    /*responzivita boxu u indexu */
+    #boxes{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /*responzivita u hlavní strany indexu*/
+    .showcase-content h1{
+        font-size: 3rem;
+    }
+    /* nastavení resbonzivity boxu u služeb */
+    #sluzby-boxy{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #sluzby-boxy .s-box {
+        height: 200px;
+        width: 300px;
+        margin: 1rem 0;
+    }
+}
